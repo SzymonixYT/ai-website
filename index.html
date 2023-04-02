@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Chat z AI</title>
+	<script>
+		function sendInput() {
+			var input = document.getElementById("userInput").value;
+			var output = document.getElementById("output");
+			output.innerHTML += "<p><strong>Użytkownik:</strong> " + input + "</p>";
+			document.getElementById("userInput").value = "";
+			getResponse(input);
+		}
+
+		function getResponse(input) {
+			// Tutaj można dodać kod AI, który generuje odpowiedź na podstawie wejścia
+			// Poniżej znajduje się przykładowy kod w JavaScript, który zwraca losową odpowiedź
+			var responses = ["Cześć!", "Jak się masz?", "Co słychać?", "W czym mogę pomóc?"];
+			var randomIndex = Math.floor(Math.random() * responses.length);
+			var response = responses[randomIndex];
+			var output = document.getElementById("output");
+			output.innerHTML += "<p><strong>AI:</strong> " + response + "</p>";
+		}
+	</script>
+</head>
+<body>
+	<h1>Chat z AI</h1>
+	<div id="output"></div>
+	<input type="text" id="userInput" placeholder="Wpisz coś...">
+	<button type="button" onclick="sendInput()">Wyślij</button>
+</body>
+</html>
